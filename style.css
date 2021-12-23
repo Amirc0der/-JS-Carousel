@@ -89,3 +89,8 @@ body{
 .tops-right::after {
   content: "\1F846";
 }
+@media only screen and (max-width: 1200px) {
+  .tops-item img {
+    width: 95%;
+  }
+}
