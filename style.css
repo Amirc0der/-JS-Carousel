@@ -92,7 +92,7 @@ body{
 .tops-right::after {
   content: "\1F846";
 }
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 900px) {
   .tops-h-container {
     overflow-x: scroll;
   }
