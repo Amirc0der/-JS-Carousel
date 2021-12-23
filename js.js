@@ -14,15 +14,18 @@ var itemsWidth = 0;
 var topsWidth = 0;
 
 function resize () {
-	 if (window.matchMedia("(max-width: 1200px)").matches) {
-	 	itemsShown = Math.round((numberofItems-1)/2);
-	 } else {
+	 if (window.matchMedia("(max-width: 1000px)").matches) {
+	 	itemsShown = Math.round((numberofItems)/3)
+	 } else if(window.matchMedia("(max-width: 1200px)").matches) {
+	 	itemsShown = Math.round((numberofItems)/2)
+	 }
+	 else {
 	 	itemsShown = numberofItems;
 	 }
 	topsWidth = tops.offsetWidth;
 	itemsWidth = (topsWidth-((itemsShown+1)*24))/itemsShown;
 	maxScroll = (items.length - itemsShown ) * (itemsWidth+24) - 10;
-	container.style.width = items.length * (itemsWidth+24) + 100 + "px";
+	container.style.width = items.length * (itemsWidth+24) + 30 + "px";
 	newStyle.innerHTML = ".tops-item {width: "+ itemsWidth +"px }";
 	tops.appendChild(newStyle);
 	Position = 0;
