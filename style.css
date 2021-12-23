@@ -20,9 +20,7 @@ body{
   background: #fff;
   box-shadow: 0 0 10px #ddd;
   border-radius: 5px;
-  overflow: hidden;
   margin: auto;
-  padding-bottom: 15px;
 }
 .tops-header{
   padding: 20px 30px 10px 30px;
@@ -35,6 +33,11 @@ body{
 .tops hr {
   border: none;
   border-top:1px solid #ddd;
+}
+.tops-h-container {
+  width: 100%;
+  overflow-x: hidden;
+  padding-bottom: 15px;
 }
 .tops-container {
   width: 5000px;
@@ -90,7 +93,7 @@ body{
   content: "\1F846";
 }
 @media only screen and (max-width: 1000px) {
-  .tops {
+  .tops-h-container {
     overflow-x: scroll;
   }
   .tops-buttons{
@@ -102,4 +105,3 @@ body{
     width: 90%;
   }
 }
-
