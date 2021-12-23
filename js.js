@@ -1,4 +1,4 @@
-var numberofItems = 5;    /// This is the number of products you want to be shown, half of it would be shown on mobile.
+var numberofItems = 5;    /// This is the number of products you want to be shown on pc.
 var Position = 0;
 
 const tops = document.querySelector(".tops")
@@ -14,10 +14,10 @@ var itemsWidth = 0;
 var topsWidth = 0;
 
 function resize () {
-	 if (window.matchMedia("(max-width: 1000px)").matches) {
+	 if (window.matchMedia("(max-width: 900px)").matches) {
 	 	itemsShown = Math.round((numberofItems)/3)
 	 } else if(window.matchMedia("(max-width: 1200px)").matches) {
-	 	itemsShown = Math.round((numberofItems)/2)
+	 	itemsShown = Math.round((numberofItems)/1.5)
 	 }
 	 else {
 	 	itemsShown = numberofItems;
