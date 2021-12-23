@@ -54,7 +54,7 @@ body{
   cursor: pointer;
 }
 .tops-item:hover {
-  box-shadow: 0 0 12px #ddd;
+  box-shadow: 0 0 10px #ddd;
   transition: none;
   margin-top: 0px;
 }
@@ -67,10 +67,10 @@ body{
   width:50px;
   text-align: center;
   height:50px;
-  top: 170px;
+  top: 40%;
   background: #fff;
   cursor: pointer;
-  box-shadow: 2px 2px 5px 0 #ccc;
+  box-shadow: 0px 0px 5px #ccc;
   font-weight: bold;
   font-size: 35px;
   line-height: 1.35;
