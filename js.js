@@ -15,7 +15,7 @@ var topsWidth = 0;
 
 function resize () {
 	 if (window.matchMedia("(max-width: 1200px)").matches) {
-	 	itemsShown = Math.round((numberofItems-1)/2)
+	 	itemsShown = Math.round(numberofItems/2);
 	 } else {
 	 	itemsShown = numberofItems;
 	 }
