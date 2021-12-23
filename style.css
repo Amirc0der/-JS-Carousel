@@ -1,5 +1,5 @@
 body{
-  padding: 20px 0 20px 0;
+  padding: 150px 0 0 0;
   margin: 0;
   font-family: verdana;
   line-height: 2;
@@ -91,6 +91,12 @@ body{
 }
 @media only screen and (max-width: 1200px) {
   .tops-item img {
-    width: 95%;
+    width: 90%;
+  }
+  .tops {
+    overflow-x: scroll;
+  }
+  .tops-buttons{
+    display: none;
   }
 }
