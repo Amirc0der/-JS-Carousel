@@ -99,8 +99,6 @@ body{
   .tops-buttons{
     display: none;
   }
-}
-@media only screen and (max-width: 1200px) {
   .tops-item img {
     width: 90%;
   }
