@@ -11,8 +11,8 @@ body{
   clear: both;
 }
 .tops * {
-  transition : all 0.5s ease 0s;
   box-sizing: border-box;
+  transition : all 0.5s ease 0s;
 }
 .tops {
   width: 90%;
@@ -102,5 +102,8 @@ body{
   }
  .tops-item img {
     width: 90%;
+  }
+  .tops-buttons {
+    display: none;
   }
 }
