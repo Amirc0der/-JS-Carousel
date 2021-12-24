@@ -30,6 +30,9 @@ body{
   font-size: 17px; 
   margin: 0;
 }
+.tops h4.tops h5 {
+  margin: 3px 0 3px 0;
+}
 .tops hr {
   border: none;
   border-top:1px solid #ddd;
@@ -38,6 +41,7 @@ body{
   width: 100%;
   overflow-x: hidden;
   padding-bottom: 15px;
+  scroll-behavior: smooth;
 }
 .tops-container {
   width: 5000px;
@@ -67,7 +71,7 @@ body{
   width:50px;
   text-align: center;
   height:50px;
-  top: 40%;
+  top: calc(50% - 25px);
   background: #fff;
   cursor: pointer;
   box-shadow: 0px 0px 5px #ccc;
@@ -87,19 +91,16 @@ body{
   border-bottom-left-radius: 10px;
 }
 .tops-left::after {
-  content: "\1F844";
+  content: "<";
 }
 .tops-right::after {
-  content: "\1F846";
+  content: ">";
 }
 @media only screen and (max-width: 900px) {
   .tops-h-container {
     overflow-x: scroll;
   }
-  .tops-buttons{
-    display: none;
-  }
-  .tops-item img {
+ .tops-item img {
     width: 90%;
   }
 }

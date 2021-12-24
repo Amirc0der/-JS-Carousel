@@ -1,10 +1,10 @@
-var numberofItems = 5;    /// This is the number of products you want to be shown on pc.
-var Position = 0;
+var numberofItems = 5;    /// This is the number of products you want to be shown, half of it would be shown on mobile.
 
 const tops = document.querySelector(".tops")
 const LeftButton = tops.querySelector(".tops-left");
 const RightButton = tops.querySelector(".tops-right");
 const container = tops.querySelector(".tops-container");
+const topsScroll = tops.querySelector(".tops-h-container");
 const items = tops.querySelectorAll(".tops-item");
 const newStyle = document.createElement("style"); 
 
@@ -25,41 +25,43 @@ function resize () {
 	topsWidth = tops.offsetWidth;
 	itemsWidth = (topsWidth-((itemsShown+1)*24))/itemsShown;
 	maxScroll = (items.length - itemsShown ) * (itemsWidth+24) - 10;
-	container.style.width = items.length * (itemsWidth+24) + 30 + "px";
+	container.style.width = items.length * (itemsWidth+24)+ 25 + "px";
 	newStyle.innerHTML = ".tops-item {width: "+ itemsWidth +"px }";
 	tops.appendChild(newStyle);
-	Position = 0;
-	container.style.marginLeft = Position + "px";
+  topsScroll.scrollTo(0,0);
 	LeftButton.style.opacity= 0.3;
 	RightButton.style.opacity= 1;
 }
 resize();
 
-function MoveLeft () {
-  if(Position<-10) {
-    RightButton.style.opacity= 1;
-    LeftButton.style.opacity= 1;
-    Position += itemsWidth+24;
-    container.style.marginLeft = Position + "px";
-    if (Position >= -10) {
-      LeftButton.style.opacity= 0.3;
-    }
+function scrollLeft () {
+  if(topsScroll.scrollLeft > 25) {
+    topsScroll.scrollLeft -= (itemsWidth+24);
   }
 }
 
-function MoveRight () {
-  if(Position > -maxScroll) {
-    RightButton.style.opacity= 1;
-    LeftButton.style.opacity= 1;
-    Position -= itemsWidth+24;
-    container.style.marginLeft = Position + "px";
-    if (Position <= -maxScroll) {
-      RightButton.style.opacity= 0.3;
-    }
+function scrollRight () {
+  if(topsScroll.scrollLeft < maxScroll-25) {
+    topsScroll.scrollLeft += itemsWidth+24;
   } 
 }
 
-LeftButton.addEventListener("click",MoveLeft);
-RightButton.addEventListener("click",MoveRight);
+function scrollUpdate () {
+    if (topsScroll.scrollLeft >= maxScroll-25) {
+      RightButton.style.opacity= 0.3;
+    } else {      
+   	  RightButton.style.opacity= 1.0;
+		}
+    if (topsScroll.scrollLeft <= 25) {
+      LeftButton.style.opacity= 0.3;
+    } else {
+    	LeftButton.style.opacity= 1.0;
+		}
+}
+
+topsScroll.addEventListener("scroll", scrollUpdate)
+
+LeftButton.addEventListener("click",scrollLeft);
+RightButton.addEventListener("click",scrollRight);
 
 window.addEventListener("resize", resize)
