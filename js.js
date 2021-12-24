@@ -6,11 +6,11 @@ const topsScroll = tops.querySelector(".tops-h-container");
 const items = tops.querySelectorAll(".tops-item");
 const newStyle = document.createElement("style");
 
-var numberofItems = 5; /// This is the number of products you want to be shown, half of it would be shown on mobile.
-var itemsShown = 0;
-var maxScroll = 0;
-var itemsWidth = 0;
-var topsBar = 0;
+let numberofItems = 5; /// This is the number of products you want to be shown, half of it would be shown on mobile.
+let itemsShown = 0;
+let maxScroll = 0;
+let itemsWidth = 0;
+let topsBar = 0;
 
 function resize() {
 	if (window.matchMedia("(max-width: 900px)").matches) {
