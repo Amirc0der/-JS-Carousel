@@ -6,7 +6,7 @@ const topsScroll = tops.querySelector(".tops-h-container");
 const items = tops.querySelectorAll(".tops-item");
 const newStyle = document.createElement("style");
 
-let numberofItems = 5; /// This is the number of products you want to be shown, half of it would be shown on mobile.
+let numberofItems = 5;							 /// This is the number of products you want to be shown on a pc
 let itemsShown = 0;
 let maxScroll = 0;
 let itemsWidth = 0;
@@ -14,9 +14,9 @@ let topsBar = 0;
 
 function resize() {
 	if (window.matchMedia("(max-width: 900px)").matches) {
-		itemsShown = 2)
+		itemsShown = 2) 					/// number of products on small devices
 	} else if (window.matchMedia("(max-width: 1200px)").matches) {
-		itemsShown = Math.round((numberofItems) / 1.5);
+		itemsShown = Math.round((numberofItems) / 1.5);		/// number of products on medium devices
 	} else {
 		itemsShown = numberofItems;
 	}
