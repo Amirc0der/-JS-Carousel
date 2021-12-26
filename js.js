@@ -14,7 +14,7 @@ let topsBar = 0;
 
 function resize() {
 	if (window.matchMedia("(max-width: 900px)").matches) {
-		itemsShown = Math.round((numberofItems) / 3)
+		itemsShown = 2)
 	} else if (window.matchMedia("(max-width: 1200px)").matches) {
 		itemsShown = Math.round((numberofItems) / 1.5);
 	} else {
