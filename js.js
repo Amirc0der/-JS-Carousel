@@ -14,7 +14,7 @@ let topsBar = 0;
 
 function resize() {
 	if (window.matchMedia("(max-width: 900px)").matches) {
-		itemsShown = 2) 					/// number of products on small devices
+		itemsShown = 2;						/// number of products on small devices
 	} else if (window.matchMedia("(max-width: 1200px)").matches) {
 		itemsShown = Math.round((numberofItems) / 1.5);		/// number of products on medium devices
 	} else {
